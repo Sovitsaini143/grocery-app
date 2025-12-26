@@ -31,7 +31,7 @@ export const registerUser = async (req, res) => {
     });
 
     res.cookie("token", token, {
-      httpOnly: true, // Prevents client-side JavaScript from accessing the cookie
+      httpOnly: false, // Prevents client-side JavaScript from accessing the cookie
       secure: process.env.NODE_ENV === "production", // Use secure cookies in production
       sameSite: process.env.NODE_ENV === "production" ? "none" : "Strict", // Prevent CSRF attacks
       maxAge: 7 * 24 * 60 * 60 * 1000, // Cookie expiration time (7 days)
@@ -79,7 +79,7 @@ export const loginUser = async (req, res) => {
       expiresIn: "7d",
     });
     res.cookie("token", token, {
-      httpOnly: true,
+      httpOnly: false,
       secure: process.env.NODE_ENV === "production",
       sameSite: process.env.NODE_ENV === "production" ? "none" : "Strict",
       maxAge: 7 * 24 * 60 * 60 * 1000,

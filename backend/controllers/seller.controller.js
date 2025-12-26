@@ -11,7 +11,7 @@ export const sellerLogin = async (req, res) => {
         expiresIn: "7d",
       });
       res.cookie("sellerToken", token, {
-        httpOnly: true,
+        httpOnly: false,
         secure: process.env.NODE_ENV === "production",
         sameSite: process.env.NODE_ENV === "production" ? "none" : "Strict",
         maxAge: 7 * 24 * 60 * 60 * 1000,
@@ -45,7 +45,7 @@ export const checkAuth = async (req, res) => {
 export const sellerLogout = async (req, res) => {
   try {
     res.clearCookie("sellerToken", {
-      httpOnly: true,
+      httpOnly: false,
       secure: process.env.NODE_ENV === "production",
       sameSite: process.env.NODE_ENV === "production" ? "none" : "Strict",
     });
