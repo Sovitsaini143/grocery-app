@@ -13,8 +13,7 @@ const ProductCard = ({ product }) => {
           );
           scrollTo(0, 0);
         }}
-        className="border border-gray-500/20 rounded-md md:px-4 px-3 py-2 bg-white min-w-56 max-w-56 w-full"
-      >
+        className="border border-gray-500/20 rounded-md md:px-4 px-3 py-2 bg-white min-w-56 max-w-56 w-full">
         <div className="group cursor-pointer flex items-center justify-center px-2">
           <img
             className="group-hover:scale-105 transition max-w-26 md:max-w-36"
@@ -49,13 +48,11 @@ const ProductCard = ({ product }) => {
             </p>
             <div
               onClick={(e) => e.stopPropagation()}
-              className="text-indigo-500"
-            >
+              className="text-indigo-500">
               {!cartItems?.[product?._id] ? (
                 <button
                   onClick={() => addToCart(product?._id)}
-                  className="flex items-center justify-center gap-1 bg-indigo-100 border border-indigo-300 md:w-[80px] w-[64px] h-[34px] rounded text-indigo-600 font-medium cursor-pointer"
-                >
+                  className="flex items-center justify-center gap-1 bg-indigo-100 border border-indigo-300 md:w-[80px]    w-[64px]   h-[34px] rounded text-indigo-600 font-medium cursor-pointer">
                   <img src={assets.cart_icon} alt="cart icon" />
                   Add
                 </button>

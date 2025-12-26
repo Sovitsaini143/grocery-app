@@ -16,7 +16,7 @@ export const AppContextProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState({});
   const [searchQuery, setSearchQuery] = useState("");
 
-  // check seller status
+   // check seller status
   const fetchSeller = async () => {
     try {
       const { data } = await axios.get("/api/seller/is-auth");
@@ -44,6 +44,7 @@ export const AppContextProvider = ({ children }) => {
       toast.error(error.message);
     }
   };
+
 
   // fetch products
   const fetchProducts = async () => {
